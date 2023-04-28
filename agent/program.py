@@ -1,7 +1,7 @@
 # COMP30024 Artificial Intelligence, Semester 1 2023
 # Project Part B: Game Playing Agent
 
-from referee.game import \
+from .referee.game import \
     PlayerColor, Action, SpawnAction, SpreadAction, HexPos, HexDir, \
     Board
 
