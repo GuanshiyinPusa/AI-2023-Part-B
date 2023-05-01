@@ -1,7 +1,7 @@
 # COMP30024 Artificial Intelligence, Semester 1 2023
 # Project Part B: Game Playing Agent
 
-from .referee.game import \
+from referee.game import \
     PlayerColor, Action, SpawnAction, SpreadAction, HexPos, HexDir, \
     Board
 
@@ -33,6 +33,7 @@ class Agent:
         print("referee: ", referee)
         
     
+    # get all the possible actions of the board, for color player 
     def get_all_possible_actions(self, color):
         action_list = []
         for i in range(self.N):
@@ -40,13 +41,15 @@ class Agent:
                 action = SpawnAction(HexPos(i, j))
                 cell = action.cell
                 
+                # spawn action
                 if self.board._total_power < self.N*self.N:
                     if not self.board._cell_occupied(cell):
                         action_list.append(action)
                 
                 if self.board[cell].player != color:
                     continue
-                    
+                
+                # spread action    
                 for dir in [HexDir.DownRight, HexDir.Down, HexDir.DownLeft, \
                     HexDir.UpLeft, HexDir.Up, HexDir.UpRight]:
                     
@@ -56,20 +59,25 @@ class Agent:
         return action_list
         
     
+    # simulate the whole game, with Max Step
     def simulation(self, cur_color, MaxStep=30):
         step, winner = 0, None
+        # simulate the game
         while not self.board.game_over and step<MaxStep:
             cur_color = cur_color.opponent
             action_list = self.get_all_possible_actions(cur_color)
             
+            # randomly pick an action
             index = randint(0, len(action_list)-1)
             action = action_list[index]
             self.board.apply_action(action)
             step += 1
         
+        # game over
         if self.board.game_over:
             winner = self.board.winner_color
         else:
+            # choose the winner
             red = self.board._color_power(PlayerColor.RED)
             blue = self.board._color_power(PlayerColor.BLUE)
             if red >= blue+2:
@@ -78,13 +86,18 @@ class Agent:
                 winner = PlayerColor.BLUE
             else:
                 winner = None
-
+        
+        # recover the board
         for i in range(step):
             self.board.undo_action()
         
         return winner
 
     
+    # calculate the UCB based on the formula
+    # Wi is the total number of wins
+    # Si is the total number of playouts
+    # Sp is the parent node
     def get_UCB(self, Wi, Si, Sp, c=1.414):
         if Si==0:
             return 10000.0
@@ -94,6 +107,7 @@ class Agent:
         return 1.0*Wi/Si + c*math.sqrt(math.log(1.0*Sp)/Si)
     
     
+    # selection for color
     def selection(self, color, tree_node, c=1.414, depth=0):
         # choose the one with max UCB
         max_UCB, target_action = 0.0, None
@@ -111,13 +125,16 @@ class Agent:
         
         # it's not a leaf node 
         if str(target_action) in tree_node:
-            # make along the path
+            # make action along the path
             self.board.apply_action( target_action )
+            # go down
             winner = self.selection(color.opponent, tree_node[str(target_action)], c, depth+1)
             self.board.undo_action()
         else:
+            # new node
             tree_node[str(target_action)] = {'info': (0,0)}
             self.board.apply_action( target_action )
+            # simulate the game
             winner = self.simulation( color )
             self.board.undo_action()
         
@@ -137,43 +154,31 @@ class Agent:
         """
         start_time = time.time()
         
-        # win number, total number
-        root = {'info': (0,0) }
-        while True:
-            # time out
-            if time.time()-start_time>1.0:
-                break
-            
-            winner = self.selection(self._color, root, 1.414)
-            if winner==self._color:
-                root['info'] = (root['info'][0]+1, root['info'][1]+1)
-            else:
-                root['info'] = (root['info'][0], root['info'][1]+1)
         
         # choose the action with the max win_rate
         best_action, win_rate, wt = None, 0.0, None
         action_list = self.get_all_possible_actions(self._color)
         for action in action_list:
-            if str(action) in root:
-                (win, total) = root[str(action)]['info']
-            else:
-                win, total = 0, 1
+            self.board.apply_action( action )
+            
+            T, win, total = 10, 0, 0.00001
+            for t in range(T): # search T times under the tree node
+                winner = self.simulation(self._color)
+                if winner == self._color:
+                    win += 1
+                total += 1
+                # time out
+                if time.time()-start_time > 1.0: break
             
             if win_rate <= 1.0*win/total:
                 best_action, win_rate, wt = action, 1.0*win/total, (win,total)
+            
+            self.board.undo_action()
         
         #print(best_action, win_rate, wt, root["info"])
         #return None
         return best_action
-            
-        """
-        match self._color:
-            case PlayerColor.RED:
-                return SpawnAction(HexPos(3, 3))
-            case PlayerColor.BLUE:
-                # This is going to be invalid... BLUE never spawned!
-                return SpreadAction(HexPos(3, 3), HexDir.Up)
-        """
+
 
     def turn(self, color: PlayerColor, action: Action, **referee: dict):
         """
@@ -181,12 +186,3 @@ class Agent:
         """
         self.board.apply_action( action )
         
-        """
-        match action:
-            case SpawnAction(cell):
-                print(f"Testing: {color} SPAWN at {cell}")
-                pass
-            case SpreadAction(cell, direction):
-                print(f"Testing: {color} SPREAD from {cell}, {direction}")
-                pass
-        """

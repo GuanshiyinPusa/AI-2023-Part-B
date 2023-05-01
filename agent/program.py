@@ -1,9 +1,10 @@
 # COMP30024 Artificial Intelligence, Semester 1 2023
 # Project Part B: Game Playing Agent
-
-from .referee.game import \
-    PlayerColor, Action, SpawnAction, SpreadAction, HexPos, HexDir, \
-    Board
+import sys
+ 
+# setting path
+sys.path.append('../project b')
+from referee.game import PlayerColor, Action, SpawnAction, SpreadAction, HexPos, HexDir, Board
 
 import time
 import math
