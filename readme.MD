@@ -1,7 +1,7 @@
 three command for testing:
 <br>
-python -m referre agent agent
+`python -m referre agent agent`
 <br>
-python -m referre agent agent_rand
+`python -m referre agent agent_rand`
 <br>
-python -m referre agent agent_basic_MCTS
+`python -m referre agent agent_basic_MCTS`
