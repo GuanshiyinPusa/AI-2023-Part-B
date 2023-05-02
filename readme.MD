@@ -36,24 +36,24 @@ python -m referee <red module\> <blue module\>
 `python -m referee agent_final agent_rand`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | final      | rand        |        |
-| 2           | final      | rand        |        |
-| 3           | final      | rand        |        |
-| 4           | final      | rand        |        |
-| 5           | final      | rand        |        |
-| 6           | final      | rand        |        |
-| 7           | final      | rand        |        |
-| 8           | final      | rand        |        |
-| 9           | final      | rand        |        |
-| 10          | final      | rand        |        |
+| 1           | final      | rand        | Red    |
+| 2           | final      | rand        | Red    |
+| 3           | final      | rand        | Red    |
+| 4           | final      | rand        | Red    |
+| 5           | final      | rand        | Red    |
+| 6           | final      | rand        | Red    |
+| 7           | final      | rand        | Red    |
+| 8           | final      | rand        | Red    |
+| 9           | final      | rand        | Red    |
+| 10          | final      | rand        | Red    |
 
 #### Red: rand VS Blue: basic
 `python -m referee agent_rand agent_basic_MCTS`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | rand       | basic       |        |
-| 2           | rand       | basic       |        |
-| 3           | rand       | basic       |        |
+| 1           | rand       | basic       | Blue   |
+| 2           | rand       | basic       | Blue   |
+| 3           | rand       | basic       | Blue   |
 | 4           | rand       | basic       |        |
 | 5           | rand       | basic       |        |
 | 6           | rand       | basic       |        |
