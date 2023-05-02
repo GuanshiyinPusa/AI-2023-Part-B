@@ -1,4 +1,4 @@
-three command for testing:
+#### three command for testing:
 <br>
 `python -m referee agent agent`
 <br>
@@ -6,17 +6,104 @@ three command for testing:
 <br>
 `python -m referee agent agent_basic_MCTS`
 
-Note:<br>
+#### Note:<br>
 python -m referee <red module\> <blue module\>
+<br>
+**What i want to do is that I should record the win and lose between:**
+- rand VS final
+- rand VS basic_MCTS
+- final VS basic_MCTS
+<br>
+#### results:
+<br>
 
-results:<br>
-python -m referee agent_rand agent_final
+#### Red: rand VS Blue: final
+`python -m referee agent_rand agent_final`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
 | 1           | rand       | final       | Draw   |
 | 2           | rand       | final       | Blue   |
-| 3           | rand       | final       | Draw   |
-| 4           | rand       | final       | Draw   |
-| 5           | rand       | final       | Draw   |
+| 3           | rand       | final       |        |
+| 4           | rand       | final       |        |
+| 5           | rand       | final       |        |
+| 6           | rand       | final       |        |
+| 7           | rand       | final       |        |
+| 8           | rand       | final       |        |
+| 9           | rand       | final       |        |
+| 10          | rand       | final       |        |
 
+#### Red: final VS Blue: rand
+`python -m referee agent_final agent_rand`
+| Game Number | Red Player | Blue Player | Winner |
+|-------------|------------|-------------|--------|
+| 1           | final      | rand        |        |
+| 2           | final      | rand        |        |
+| 3           | final      | rand        |        |
+| 4           | final      | rand        |        |
+| 5           | final      | rand        |        |
+| 6           | final      | rand        |        |
+| 7           | final      | rand        |        |
+| 8           | final      | rand        |        |
+| 9           | final      | rand        |        |
+| 10          | final      | rand        |        |
+
+#### Red: rand VS Blue: basic
+`python -m referee agent_rand agent_basic_MCTS`
+| Game Number | Red Player | Blue Player | Winner |
+|-------------|------------|-------------|--------|
+| 1           | rand       | basic       |        |
+| 2           | rand       | basic       |        |
+| 3           | rand       | basic       |        |
+| 4           | rand       | basic       |        |
+| 5           | rand       | basic       |        |
+| 6           | rand       | basic       |        |
+| 7           | rand       | basic       |        |
+| 8           | rand       | basic       |        |
+| 9           | rand       | basic       |        |
+| 10          | rand       | basic       |        |
+
+#### Red: basic VS Blue: rand
+`python -m referee agent_basic_MCTS agent_rand`
+| Game Number | Red Player | Blue Player | Winner |
+|-------------|------------|-------------|--------|
+| 1           | basic      | rand        |        |
+| 2           | basic      | rand        |        |
+| 3           | basic      | rand        |        |
+| 4           | basic      | rand        |        |
+| 5           | basic      | rand        |        |
+| 6           | basic      | rand        |        |
+| 7           | basic      | rand        |        |
+| 8           | basic      | rand        |        |
+| 9           | basic      | rand        |        |
+| 10          | basic      | rand        |        |
+
+#### Red: basic VS Blue: final
+`python -m referee agent_basic_MCTS agent_final`
+| Game Number | Red Player | Blue Player | Winner |
+|-------------|------------|-------------|--------|
+| 1           | basic      | final       |        |
+| 2           | basic      | final       |        |
+| 3           | basic      | final       |        |
+| 4           | basic      | final       |        |
+| 5           | basic      | final       |        |
+| 6           | basic      | final       |        |
+| 7           | basic      | final       |        |
+| 8           | basic      | final       |        |
+| 9           | basic      | final       |        |
+| 10          | basic      | final       |        |
+
+#### Red: final VS Blue: basic
+`python -m referee agent_final agent_basic_MCTS`
+| Game Number | Red Player | Blue Player | Winner |
+|-------------|------------|-------------|--------|
+| 1           | final      | basic       |        |
+| 2           | final      | basic       |        |
+| 3           | final      | basic       |        |
+| 4           | final      | basic       |        |
+| 5           | final      | basic       |        |
+| 6           | final      | basic       |        |
+| 7           | final      | basic       |        |
+| 8           | final      | basic       |        |
+| 9           | final      | basic       |        |
+| 10          | final      | basic       |        |
 
