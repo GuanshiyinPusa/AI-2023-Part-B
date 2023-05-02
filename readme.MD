@@ -23,14 +23,14 @@ python -m referee <red module\> <blue module\>
 |-------------|------------|-------------|--------|
 | 1           | rand       | final       | Draw   |
 | 2           | rand       | final       | Blue   |
-| 3           | rand       | final       |        |
-| 4           | rand       | final       |        |
-| 5           | rand       | final       |        |
-| 6           | rand       | final       |        |
-| 7           | rand       | final       |        |
-| 8           | rand       | final       |        |
-| 9           | rand       | final       |        |
-| 10          | rand       | final       |        |
+| 3           | rand       | final       | Red    |
+| 4           | rand       | final       | Blue   |
+| 5           | rand       | final       | Blue   |
+| 6           | rand       | final       | Blue   |
+| 7           | rand       | final       | Blue   |
+| 8           | rand       | final       | Blue   |
+| 9           | rand       | final       | Blue   |
+| 10          | rand       | final       | Blue   |
 
 #### Red: final VS Blue: rand
 `python -m referee agent_final agent_rand`
