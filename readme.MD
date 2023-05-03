@@ -66,44 +66,44 @@ python -m referee <red module\> <blue module\>
 `python -m referee agent_basic_MCTS agent_rand`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | basic      | rand        |        |
-| 2           | basic      | rand        |        |
-| 3           | basic      | rand        |        |
-| 4           | basic      | rand        |        |
-| 5           | basic      | rand        |        |
-| 6           | basic      | rand        |        |
-| 7           | basic      | rand        |        |
-| 8           | basic      | rand        |        |
-| 9           | basic      | rand        |        |
-| 10          | basic      | rand        |        |
+| 1           | basic      | rand        | RED    |
+| 2           | basic      | rand        | RED    |
+| 3           | basic      | rand        | RED    |
+| 4           | basic      | rand        | RED    |
+| 5           | basic      | rand        | RED    |
+| 6           | basic      | rand        | RED    |
+| 7           | basic      | rand        | RED    |
+| 8           | basic      | rand        | RED    |
+| 9           | basic      | rand        | RED    |
+| 10          | basic      | rand        | RED    |
 
 #### Red: basic VS Blue: final
 `python -m referee agent_basic_MCTS agent_final`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | basic      | final       |        |
-| 2           | basic      | final       |        |
-| 3           | basic      | final       |        |
-| 4           | basic      | final       |        |
-| 5           | basic      | final       |        |
-| 6           | basic      | final       |        |
-| 7           | basic      | final       |        |
-| 8           | basic      | final       |        |
-| 9           | basic      | final       |        |
-| 10          | basic      | final       |        |
+| 1           | basic      | final       | RED    |
+| 2           | basic      | final       | RED    |
+| 3           | basic      | final       | BLUE   |
+| 4           | basic      | final       | BLUE   |
+| 5           | basic      | final       | RED    |
+| 6           | basic      | final       | RED    |
+| 7           | basic      | final       | RED    |
+| 8           | basic      | final       | BLUE   |
+| 9           | basic      | final       | RED    |
+| 10          | basic      | final       | RED    |
 
 #### Red: final VS Blue: basic
 `python -m referee agent_final agent_basic_MCTS`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | final      | basic       |        |
-| 2           | final      | basic       |        |
-| 3           | final      | basic       |        |
-| 4           | final      | basic       |        |
-| 5           | final      | basic       |        |
-| 6           | final      | basic       |        |
-| 7           | final      | basic       |        |
-| 8           | final      | basic       |        |
-| 9           | final      | basic       |        |
-| 10          | final      | basic       |        |
+| 1           | final      | basic       | RED    |
+| 2           | final      | basic       | RED    |
+| 3           | final      | basic       | BLUE   |
+| 4           | final      | basic       | BLUE   |
+| 5           | final      | basic       | RED    |
+| 6           | final      | basic       | BLUE   |
+| 7           | final      | basic       | RED    |
+| 8           | final      | basic       | RED    |
+| 9           | final      | basic       | BLUE   |
+| 10          | final      | basic       | RED    |
 
