@@ -81,8 +81,8 @@ python -m referee <red module\> <blue module\>
 `python -m referee agent_basic_MCTS agent_final`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | basic      | final       | Red   |
-| 2           | basic      | final       | Blue  |
+| 1           | basic      | final       | Red    |
+| 2           | basic      | final       | Blue   |
 | 3           | basic      | final       | Red    |
 | 4           | basic      | final       | Red    |
 | 5           | basic      | final       | Red    |
