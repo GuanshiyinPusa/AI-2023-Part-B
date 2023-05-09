@@ -57,7 +57,7 @@ class Agent:
         return action_list
         
     
-    def simulation(self, cur_color, MaxStep=30):
+    def simulation(self, cur_color, MaxStep=20):
         step, winner = 0, None
         while not self.board.game_over and step<MaxStep:
             cur_color = cur_color.opponent
