@@ -12,7 +12,7 @@ final is GPT
 | 6           | basic      | daixie      | red    |
 | 7           | basic      | daixie      | blue   |
 | 8           | basic      | daixie      | blue   |
-| 9           | basic      | daixie      |    |
+| 9           | basic      | daixie      | red    |
 | 10          | basic      | daixie      |    |
 
 `python -m referee agent_stronger agent_final`
