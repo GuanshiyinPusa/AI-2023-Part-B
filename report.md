@@ -2,8 +2,10 @@
 
 <h4 align="center">Shuyuan Gao & Hong Thuan Ta</h3>
 
+## Introduction
+&nbsp;&nbsp;&nbsp;&nbsp;This report discusses our approach to developing a game-playing program that competes in the 2023 COMP30024 Artificial Intelligence tournament. We will provide details on our program's methodology, performance evaluation, and supporting work. The game we target is Infexion, which is a complex, strategic game.
 
-# Abstract
+## Abstract
 &nbsp;&nbsp;&nbsp;&nbsp;This report presents our approach to developing a game-playing program that competes in the 2023 COMP30024 Artificial Intelligence tournament. Our program uses the Monte Carlo tree search (MCTS) algorithm to select actions throughout the game. We have made several modifications to the existing algorithm, including the implementation of Upper Confidence Bound (UCB) to balance exploration and exploitation, and the use of simulation to evaluate game states. Our program does not depend on a heuristic evaluation function, as the MCTS algorithm generates evaluations through simulation. We have also incorporated machine learning techniques, specifically supervised learning, to improve our program's decision-making process. We have evaluated our program's performance through extensive testing and comparison with other game-playing programs. Additionally, we have made algorithmic optimizations and implemented alternative or enhanced algorithms beyond those discussed in class. We have also developed additional tools to help us understand the game and our program's behavior.
 
 ## Approach
@@ -20,13 +22,13 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Overall, our game program combines the strengths of MCTS and UCB to select actions that balance exploration and exploitation, and uses an evaluation function based on heuristic features to estimate the value of game states. The combination of these techniques results in a strong player that can compete with human players in complex game environments.
 
-## Other Aspects -- using Upper Confidence Bounds
+## Other Aspects -- Using Upper Confidence Bounds
 &nbsp;&nbsp;&nbsp;&nbsp;At the beginning, we implemented a basic version of the Monte Carlo Tree Search (MCTS) algorithm. This involved enumerating all possible actions from the current board state, and simulating games where both players took random actions until the game ended or a certain number of steps were taken. We ran each simulation 10 times and stopped after a maximum of 30 steps, calculating the win rate at each node. We used a total time limit of 180 seconds, and could only spend up to 1 second per step. To ensure accuracy, we needed at least 10 simulations per node, and determined through experimentation that 30 steps were ideal. We chose the action corresponding to the node with the highest win rate as the optimal result. This basic version of MCTS performed well in competitions against random agents.
 
 &nbsp;&nbsp;&nbsp;&nbsp;However, the basic MCTS algorithm had a major flaw: it assumed that both players took random actions during simulations, which is not realistic in actual gameplay. To address this issue, we added Upper Confidence Bounds (UCB) optimization, which maintains a tree of all possible moves. At each step, we traverse the tree by selecting the node with the highest UCB score, until we reach a leaf node. We then simulate random moves until the game ends and update the win-loss statistics for the entire path, from the leaf node to the root of the tree. After the entire learning process, we choose the action corresponding to the node with the highest win rate among the root node's children. This improved version of MCTS performed even better in testing.
 
 ## Supporting Work
-&nbsp;&nbsp;&nbsp;&nbsp;In order to analyze the performance and effectiveness of our MCTS algorithm with UCB, we created two additional agents, one using the standard MCTS algorithm without UCB and the other making random moves. These agents were then set to compete with each other in multiple games, and we calculated the win rates for each agent. Through this process, we were able to demonstrate that our algorithm was the most optimal and effective approach for playing the game.
+&nbsp;&nbsp;&nbsp;&nbsp;In order to analyze the performance and effectiveness of our MCTS algorithm with UCB, we created two additional agents, one using the standard MCTS algorithm without UCB and the other taking random moves. These agents were then set to compete with each other in multiple games, and we calculated the win rates for each agent. Through this process, we were able to demonstrate that our algorithm was the most optimal and effective approach for playing the game.
 
 Here is an example on how we let the agents compete and record the results:
 
@@ -52,7 +54,7 @@ The full results are listed here: https://github.com/GuanshiyinPusa/AI-2023-Part
 
 ## Performance Evaluation
 
-&nbsp;&nbsp;&nbsp;&nbsp;To analyze the performance and display the effectiveness of the MCTS algorithm with UCB, we wrote the other two agents which adopts different algorithm -- MCTS without UCB and the other is just taking random moves. By letting them compete with each other, we have calculated the win rate of the agents. The results of the testing are summarized below:
+&nbsp;&nbsp;&nbsp;&nbsp;To analyze the performance and display the effectiveness of the MCTS algorithm with UCB, we wrote the other two agents which adopt different algorithm -- MCTS without UCB and the other is just taking random moves. By letting them compete with each other, we have calculated the win rate of the agents. The results of the testing are summarized below:
 
 | Agent 1 | Agent 2 | Agent 1 Win Rate |
 | ------- | ------- | ---------------- |
