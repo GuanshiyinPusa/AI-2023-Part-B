@@ -35,22 +35,23 @@ Here is an example on how we let the agents compete and record the results:
 The code: <br>
 `python -m referee <red module\> <blue module\>`
 #### Results:
-#####  Red: rand VS Blue: final
+#####  Red: rand VS Blue: final(MCTS with UCB)
 `python -m referee agent_rand agent_final`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | rand       | final       | Draw   |
-| 2           | rand       | final       | Blue   |
-| 3           | rand       | final       | Red    |
-| 4           | rand       | final       | Blue   |
-| 5           | rand       | final       | Blue   |
-| 6           | rand       | final       | Blue   |
-| 7           | rand       | final       | Blue   |
-| 8           | rand       | final       | Blue   |
-| 9           | rand       | final       | Blue   |
-| 10          | rand       | final       | Blue   |
+| 1           | rand       | MCTS with UCB| Draw   |
+| 2           | rand       | MCTS with UCB| Blue   |
+| 3           | rand       | MCTS with UCB| Red    |
+| 4           | rand       | MCTS with UCB| Blue   |
+| 5           | rand       | MCTS with UCB| Blue   |
+| 6           | rand       | MCTS with UCB| Blue   |
+| 7           | rand       | MCTS with UCB| Blue   |
+| 8           | rand       | MCTS with UCB| Blue   |
+| 9           | rand       | MCTS with UCB| Blue   |
+| 10          | rand       | MCTS with UCB| Blue   |
 
-The full results are listed here: https://github.com/GuanshiyinPusa/AI-2023-Part-B/blob/main/readme.MD
+The full results are listed here with the code of MCTS without UCB and random:
+https://github.com/GuanshiyinPusa/AI-2023-Part-B/blob/main/readme.MD
 
 ## Performance Evaluation
 
@@ -58,11 +59,11 @@ The full results are listed here: https://github.com/GuanshiyinPusa/AI-2023-Part
 
 | Agent 1 | Agent 2 | Agent 1 Win Rate |
 | ------- | ------- | ---------------- |
-| Rand    | Final   | 10%              |
+| Rand    | MCTS with UCB   | 10%              |
 | Rand    | Basic MCTS | 0%            |
-| Final   | Rand    | 100%             |
+| MCTS with UCB   | Rand    | 100%             |
 | Basic MCTS | Rand    | 100%          |
-| Basic MCTS | Final   | 70%           |
+| Basic MCTS | MCTS with UCB   | 70%           |
 | Final   | Basic MCTS | 30%           |
 
 &nbsp;&nbsp;&nbsp;&nbsp;As can be seen from the table, the MCTS algorithm with UCB (Agent 1) achieves the best performance against both MCTS without UCB and random move agents. Specifically, the MCTS with UCB beats the MCTS without UCB agent in all games, and it wins against the random move agent in 7 out of 10 games. Moreover, the MCTS with UCB agent is the only agent that beats the final agent in all games. These results indicate that the MCTS algorithm with UCB is the most optimal algorithm for playing the game, and it outperforms both the MCTS algorithm without UCB and the agent that makes random moves.
