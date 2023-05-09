@@ -87,10 +87,10 @@ python -m referee <red module\> <blue module\>
 | 4           | basic      | final       |   |
 | 5           | basic      | final       |   |
 | 6           | basic      | final       |    |
-| 7           | basic      | final       |    |
+| 7           | basic      | final       | Blue   |
 | 8           | basic      | final       | Blue   |
-| 9           | basic      | final       | Red  |
-| 10          | basic      | final       |   |
+| 9           | basic      | final       | Red   |
+| 10          | basic      | final       | Red   |
 
 #### Red: final VS Blue: basic
 `python -m referee agent_final agent_basic_MCTS`
