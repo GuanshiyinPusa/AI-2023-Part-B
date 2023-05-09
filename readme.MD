@@ -81,29 +81,29 @@ python -m referee <red module\> <blue module\>
 `python -m referee agent_basic_MCTS agent_final`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | basic      | final       |    |
-| 2           | basic      | final       |   |
-| 3           | basic      | final       |  |
-| 4           | basic      | final       |   |
-| 5           | basic      | final       |   |
-| 6           | basic      | final       |    |
+| 1           | basic      | final       | Red   |
+| 2           | basic      | final       | Blue  |
+| 3           | basic      | final       | Red    |
+| 4           | basic      | final       | Red    |
+| 5           | basic      | final       | Red    |
+| 6           | basic      | final       | Red    |
 | 7           | basic      | final       | Blue   |
 | 8           | basic      | final       | Blue   |
-| 9           | basic      | final       | Red   |
-| 10          | basic      | final       | Red   |
+| 9           | basic      | final       | Red    |
+| 10          | basic      | final       | Red    |
 
 #### Red: final VS Blue: basic
 `python -m referee agent_final agent_basic_MCTS`
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
-| 1           | final      | basic       |     |
-| 2           | final      | basic       |   |
-| 3           | final      | basic       |   |
-| 4           | final      | basic       |   |
-| 5           | final      | basic       |    |
-| 6           | final      | basic       |    |
-| 7           | final      | basic       |    |
-| 8           | final      | basic       |    |
-| 9           | final      | basic       |    |
-| 10          | final      | basic       |    |
+| 1           | final      | basic       | Red    |
+| 2           | final      | basic       | Red    |
+| 3           | final      | basic       | Red    |
+| 4           | final      | basic       | Red    |
+| 5           | final      | basic       | Red    |
+| 6           | final      | basic       | Red    |
+| 7           | final      | basic       | Red    |
+| 8           | final      | basic       | Blue   |
+| 9           | final      | basic       | Red    |
+| 10          | final      | basic       | Red    |
 
