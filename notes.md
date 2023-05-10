@@ -23,11 +23,11 @@ final is GPT
 | 3           | basic      | GPT         | red    |
 | 4           | basic      | GPT         | red    |
 | 5           | basic      | GPT         | red    |
-| 6           | basic      | GPT         |    |
-| 7           | basic      | GPT         |    |
-| 8           | basic      | GPT         |    |
-| 9           | basic      | GPT         |    |
-| 10          | basic      | GPT         |    |
+| 6           | basic      | GPT         | blue   |
+| 7           | basic      | GPT         | blue   |
+| 8           | basic      | GPT         | red    |
+| 9           | basic      | GPT         | red    |
+| 10          | basic      | GPT         | red    |
 
 `python3 -m referee agent_stronger agent_final`     ---- GSY 80%
 | Game Number | Red Player | Blue Player | Winner |
