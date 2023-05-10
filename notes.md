@@ -15,7 +15,7 @@ final is GPT
 | 9           | basic      | GSY         | red    |
 | 10          | basic      | GSY         | red    |
 
-`python -m referee agent_basic_MCTS agent_final`
+`python -m referee agent_basic_MCTS agent_final`    ---- GPT 40%
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
 | 1           | basic      | GPT         | blue   |
@@ -42,7 +42,7 @@ final is GPT
 | 9           | GSY        | GPT         | red    |
 | 10          | GSY        | GPT         | red    |
 
-`python -m referee agent_final agent_stronger `
+`python -m referee agent_final agent_stronger `     ---- GPT 10%
 | Game Number | Red Player | Blue Player | Winner |
 |-------------|------------|-------------|--------|
 | 1           | GPT        | GSY         | red    |
