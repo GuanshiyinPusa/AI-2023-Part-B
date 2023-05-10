@@ -51,8 +51,8 @@ final is GPT
 | 4           | GPT        | GSY         | red    |
 | 5           | GPT        | GSY         | red    |
 | 6           | GPT        | GSY         | red    |
-| 7           | GPT        | GSY         |    |
-| 8           | GPT        | GSY         |    |
-| 9           | GPT        | GSY         |    |
-| 10          | GPT        | GSY         |    |
+| 7           | GPT        | GSY         | red    |
+| 8           | GPT        | GSY         | red    |
+| 9           | GPT        | GSY         | blue   |
+| 10          | GPT        | GSY         | red    |
 
