@@ -72,6 +72,37 @@ https://github.com/GuanshiyinPusa/AI-2023-Part-B/blob/main/readme.MD
 
 &nbsp;&nbsp;&nbsp;&nbsp;A possible explanation for this phenomenon is the limited time resources required by the algorithm. With 180 seconds allocated to each player, which translates to nearly 1 second per turn, there is insufficient time for the algorithm to determine the optimal next move.
 
+##  Attempted Improvements and Runtime Analysis
+&nbsp;&nbsp;&nbsp;&nbsp; During the implementation of the MCTS with UCB algorithm, several improvements were made to address issues related to efficiency and accuracy. These improvements were made in a series of iterative versions, which are summarized below:
+
+- V1: This was the original version of the MCTS with UCB algorithm. However, it was found that the algorithm was not performing well when playing as the blue player, resulting in a low win rate of only 20%.
+
+- V2: To improve the accuracy of the algorithm, the maxstep parameter in the simulation function was reduced. This helped to increase the win rate, but the issue with poor performance as the blue player persisted.
+
+- V3: To address the low win rate issue for the blue player, a modification was made to the algorithm to randomly select half of the possible actions, thus reducing the time spent on suboptimal actions. This resulted in a significant improvement in the win rate for the blue player.
+
+- V4(agent_final): In this version, the algorithm was further optimized for efficiency. Specifically, the action list was saved when optimizing UCB, reducing the computational overhead. Additionally, the speed function was updated, resulting in a further improvement in runtime performance.
+
+&nbsp;&nbsp;&nbsp;&nbsp;By making these iterative improvements to the algorithm, the efficiency and accuracy of the MCTS with UCB algorithm were significantly improved, resulting in a more competitive game-playing program.
+
+#### Time analysis:
+| command                                             | user    | system | total   |
+|-----------------------------------------------------|---------|--------|---------|
+| time python3 -m referee agent_rand agent_final      | 167.00s | 1.19s  | 3:06.85 |
+| time python3 -m referee agent_rand agent_basic_MCTS | 359.34s | 1.72s  | 6:13.22 |
+| time python3 -m referee agent_rand agent_v1         | 146.67s | 1.81s  | 3:10.13 |
+| time python3 -m referee agent_rand agent_v2         | 173.73s | 0.84s  | 3:04.36 |
+| time python3 -m referee agent_rand agent_v3         | 180.92s | 0.60s  | 3:0327  |   
+
+| command                                             | user    | system | total   |
+|-----------------------------------------------------|---------|--------|---------|
+| time python3 -m referee agent_final agent_rand      | 181.95s | 0.67s  | 3:05.86 |
+| time python3 -m referee agent_basic_MCTS agent_rand | 361.41s | 0.93s  | 8:40.83 |
+| time python3 -m referee agent_v1 agent_rand         | 182.89s | 0.61s  | 3:05.46 |
+| time python3 -m referee agent_v2 agent_rand         | 180.49s | 0.76s  | 3:04.67 |
+| time python3 -m referee agent_v3 agent_rand         | 181.94s | 0.65s  | 3:04.49 |
+
+&nbsp;&nbsp;&nbsp;&nbsp;After analyzing the runtime of the different agents, it is clear that the agent_final has the best balance of runtime and win rate among all the tested agents. The results demonstrate that the agent_final consistently performed well in terms of runtime and was able to achieve a high win rate against the random agent. This suggests that the combination of Monte Carlo Tree Search with Upper Confidence Bounds and a heuristic evaluation function used in agent_final is an effective approach for playing the Infexion game. It is worth noting that agent_basic_MCTS had the longest runtime and agent_v2 had the shortest runtime. However, agent_v2 did not perform as well in terms of win rate as agent_final. Thus, the results suggest that agent_final is the most optimal agent among the tested agents.
 ## Conclusion
 
 &nbsp;&nbsp;&nbsp;&nbsp;In this report, we presented our approach to designing a competitive game-playing program for the 2023 COMP30024 Artificial Intelligence tournament. Our program utilized the Monte Carlo Tree Search algorithm enhanced with Upper Confidence Bounds and a heuristic evaluation function to balance exploration and exploitation in decision-making. The performance evaluation demonstrated the effectiveness of our approach, as our program outperformed both random agents and agents using MCTS without UCB. As a result, we believe that our game-playing program is well-suited.

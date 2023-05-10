@@ -107,3 +107,22 @@ python -m referee <red module\> <blue module\>
 | 9           | final      | basic       | Red    |
 | 10          | final      | basic       | Red    |
 
+Time analysis:
+| command                                             | user    | system | total   |
+|-----------------------------------------------------|---------|--------|---------|
+| time python3 -m referee agent_rand agent_final      | 167.00s | 1.19s  | 3:06.85 |
+| time python3 -m referee agent_rand agent_basic_MCTS | 359.34s | 1.72s  | 6:13.22 |
+| time python3 -m referee agent_rand agent_v1         | 146.67s | 1.81s  | 3:10.13 |
+| time python3 -m referee agent_rand agent_v2         | 173.73s | 0.84s  | 3:04.36 |
+| time python3 -m referee agent_rand agent_v3         | 180.92s | 0.60s  | 3:0327  |   
+
+| command                                             | user    | system | total   |
+|-----------------------------------------------------|---------|--------|---------|
+| time python3 -m referee agent_final agent_rand      | 181.95s | 0.67s  | 3:05.86 |
+| time python3 -m referee agent_basic_MCTS agent_rand | 361.41s | 0.93s  | 8:40.83 |
+| time python3 -m referee agent_v1 agent_rand         | 182.89s | 0.61s  | 3:05.46 |
+| time python3 -m referee agent_v2 agent_rand         | 180.49s | 0.76s  | 3:04.67 |
+| time python3 -m referee agent_v3 agent_rand         | 181.94s | 0.65s  | 3:04.49 |
+
+
+
