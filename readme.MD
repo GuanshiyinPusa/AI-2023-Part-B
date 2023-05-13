@@ -1,11 +1,16 @@
 #### three command for testing:
 <br>
-`python -m referee agent agent`
+`python -m referee agent_final agent`
 <br>
-`python -m referee agent agent_rand`
+`python -m referee agent_final agent_rand`
 <br>
-`python -m referee agent agent_basic_MCTS`
-
+`python -m referee agent_final agent_basic_MCTS`
+<br>
+`python -m referee agent_v1 agent_final`
+<br>
+`python -m referee agent_v2 agent_final`
+<br>
+`python -m referee agent_v3 agent_final`
 #### Note:<br>
 python -m referee <red module\> <blue module\>
 <br>

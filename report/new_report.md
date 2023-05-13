@@ -8,6 +8,7 @@
 ## Approach
 &nbsp;&nbsp;&nbsp;&nbsp;We are using MCTS, Monte Carlo Tree Search algorithm to drive our agent. It was tested for a couple of times and the result are not satisfying. Therefore, we improved our algorithm by introducing UCB, Upper Confidence Bound. In Performance Evaluation section, I have listed table showing the other agents we created to compete with our agent.
 
+<br>
 ### Why UCB?
 &nbsp;&nbsp;&nbsp;&nbsp;At the beginning, we implemented a basic version of the Monte Carlo Tree Search (MCTS) algorithm. This involved enumerating all possible actions from the current board state, and simulating games where both players took random actions until the game ended or a certain number of steps were taken. We ran each simulation 10 times and stopped after a maximum of 10 steps, calculating the win rate at each node. We used a total time limit of 180 seconds, and could only spend up to 1 second per step. To ensure accuracy, we needed at least 10 simulations per node, and determined through experimentation that 10 steps were ideal. We chose the action corresponding to the node with the highest win rate as the optimal result. This basic version of MCTS performed well in competitions against random agents.
 
@@ -73,7 +74,7 @@ https://github.com/GuanshiyinPusa/AI-2023-Part-B/blob/main/readme.MD
 &nbsp;&nbsp;&nbsp;&nbsp;A possible explanation for this phenomenon is the limited time resources required by the algorithm. With 180 seconds allocated to each player, which translates to nearly 1 second per turn, there is insufficient time for the algorithm to determine the optimal next move.
 
 ##  Attempted Improvements and Runtime Analysis
-&nbsp;&nbsp;&nbsp;&nbsp; During the implementation of the MCTS with UCB algorithm, several improvements were made to address issues related to efficiency and accuracy. These improvements were made in a series of iterative versions, which are summarized below:
+&nbsp;&nbsp;&nbsp;&nbsp; During the implementation of the MCTS with UCB algorithm, several improvements were made to address issues related to efficiency and accuracy. These improvements were made in a series of iterative versions, which are summarized below and put up in Github:https://github.com/GuanshiyinPusa/AI-2023-Part-B/
 
 - V1: This was the original version of the MCTS with UCB algorithm. However, it was found that the algorithm was not performing well when playing as the blue player, resulting in a low win rate of only 20%.
 
